@@ -1,0 +1,84 @@
+# program name, name for the executable
+ProgramName: Wireframe-CICD
+Authors: Tong Sun
+
+PackageName: main
+
+Name: Wireframe-CICD
+Desc: "Wireframe CI/CD Demo"
+Text: Tool to showcase wire-framing command line app fast prototype
+#NumOption: cli.AtLeast(1)
+Style: cli.DenseNormalStyle
+NumArg: cli.AtLeast(1)
+Global: true
+# this (Self) means that root option is using the self-config .json file
+Self: true
+
+#UsageLead: "Usage:\\n  Wireframe-CICD [Options] dir [dirs...]"
+
+Options:
+  - Name: Self
+    Type: '*rootT'
+    Flag: c,config
+    Usage: config file\n
+    #Value: "$__EXEC_FILENAME.json"
+    Value: Wireframe-CICD_cfg.json
+
+  - Name: Host
+    Type: string
+    Flag: H,host
+    Usage: host addr
+    Value: '$HOST'
+
+  - Name: Port
+    Type: int
+    Flag: p,port
+    Usage: listening port\n
+
+  - Name: Demo
+    Type: string
+    Flag: long
+    Usage: Now can use the \\n to arrange parameters in groups\n\t\t\tJust like what is showing here, even with extreme long usage text that can spread across multiple lines\n
+    Value: '$Demo'
+
+  - Name: Daemonize
+    Type: bool
+    Flag: D,daemonize
+    Usage: daemonize the service
+
+  - Name: Verbose
+    Type: cli.Counter
+    Flag: v,verbose
+    Usage: Verbose mode (Multiple -v options increase the verbosity)\n
+
+Command:
+
+  - Name: put
+    Desc: "Upload into service"
+    Text: 'Usage:\n  Wireframe-CICD put -i /tmp/f'
+    #NumArg: cli.AtLeast(1)
+    NumOption: cli.AtLeast(1)
+
+    Options:
+      - Name: Filei
+        Type: '*clix.Reader'
+        Flag: '*i,input'
+        Usage: The file to upload from (mandatory)
+
+  - Name: get
+    Desc: Get from the service
+    Text: 'Usage:\n  Wireframe-CICD get -o /tmp/f some more args'
+    NumArg: cli.AtLeast(1)
+    #NumOption: cli.AtLeast(1)
+
+    Options:
+      - Name: Filei
+        Type: '*clix.Reader'
+        Flag: '*i,input'
+        Usage: The file to upload from (mandatory)
+
+      - Name: Fileo
+        Type: '*clix.Writer'
+        Flag: o,output
+        Usage: 'The output file (default: some file)'
+

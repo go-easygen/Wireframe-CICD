@@ -1,0 +1,8 @@
+Wireframe:
+  Proj: Wireframe-CICD
+  Desc: Wireframe CI/CD Demo
+  Lang: Go
+  Vendor: go-easygen
+  Author: Tong Sun <suntong@cpan.org>
+  License: MIT
+  
