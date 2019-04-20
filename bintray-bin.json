@@ -1,0 +1,27 @@
+{
+    "package": {
+        "name": "Wireframe-CICD",
+        "repo": "bin",
+        "subject": "suntong",
+        "desc": "Wireframe CI/CD Demo",
+        "website_url": "https://github.com/go-easygen/Wireframe-CICD",
+        "issue_tracker_url": "https://github.com/go-easygen/Wireframe-CICD/issues",
+        "vcs_url": "https://github.com/go-easygen/Wireframe-CICD.git",
+        "licenses": ["MIT"],
+        "public_download_numbers": false
+    },
+
+    "version": {
+        "name": "latest",
+        "gpgSign": false
+    },
+
+    "files": [{
+	"includePattern": "out/(.*)", "uploadPattern": "Wireframe-CICD/$1",
+        "matrixParams": {
+            "override": 1
+        }
+    }],
+
+    "publish": true
+}
