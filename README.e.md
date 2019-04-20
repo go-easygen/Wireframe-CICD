@@ -1,21 +1,15 @@
 
-# Wireframe-CICD - Wireframe CI/CD Demo
+# {{.Name}} - Wireframe CI/CD Demo
 
 Wireframe CI/CD Demo
 
-[![MIT License](http://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![GoDoc](https://godoc.org/github.com/go-easygen/Wireframe-CICD?status.svg)](http://godoc.org/github.com/go-easygen/Wireframe-CICD)
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-easygen/Wireframe-CICD)](https://goreportcard.com/report/github.com/go-easygen/Wireframe-CICD)
-[![travis Status](https://travis-ci.org/go-easygen/Wireframe-CICD.svg?branch=master)](https://travis-ci.org/go-easygen/Wireframe-CICD)
+{{render "license/shields" . "License" "MIT"}}
+{{template "badge/godoc" .}}
+{{template "badge/goreport" .}}
+{{template "badge/travis" .}}
 [![PoweredBy WireFrame](https://github.com/go-easygen/wireframe/blob/master/PoweredBy-WireFrame-R.svg)](http://godoc.org/github.com/go-easygen/wireframe)
 
-## TOC
-- [SYNOPSIS](#synopsis)
-- [OPTIONS](#options)
-- [DESCRIPTION](#description)
-- [EXAMPLES](#examples)
-- [SEE ALSO](#see-also)
-- [AUTHORS](#authors)
+## {{toc 5}}
 
 The following are just borrowed from [`ffcvt`](https://github.com/suntong/ffcvt).
 Only to show the TOC feature.
